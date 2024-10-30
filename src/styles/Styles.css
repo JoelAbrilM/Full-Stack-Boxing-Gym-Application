@@ -1,0 +1,953 @@
+/*Main Page Estilos*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900'); 
+@import url('https://fonts.cdnfonts.com/css/kenyan-coffee-2');
+
+.BodyMainPage {
+    position: fixed;
+    /* Fija el elemento para que cubra toda la pantalla */
+    top: 0;
+    /* Posiciona el elemento en la parte superior */
+    left: 0;
+    /* Posiciona el elemento a la izquierda */
+    width: 100%;
+    /* Establece el ancho del elemento al 100% del contenedor padre */
+    height: 100%;
+    /* Establece la altura del elemento al 100% del contenedor padre */
+    background-image: url(../../src/img/MainPage_Background.jpg);
+    /* Establece la imagen de fondo */
+    background-size: cover;
+    /* Asegura que la imagen cubra toda el área */
+    background-position: center;
+    /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+    /* Evita que la imagen de fondo se repita */
+    background-attachment: fixed;
+    /* Mantiene la imagen de fondo fija mientras se desplaza el contenido */
+    z-index: 1;
+    /* Asegura que este elemento esté en un nivel superior */
+}
+
+.diagonal-container {
+    position: relative;
+    /* Posiciona el contenedor relativo para poder posicionar los hijos de manera absoluta */
+    width: 100%;
+    /* Establece el ancho del contenedor al 100% del contenedor padre */
+    height: 100vh;
+    /* Establece la altura del contenedor a 100% de la altura de la ventana del navegador */
+    overflow: hidden;
+    /* Oculta cualquier contenido que se desborde del contenedor */
+    display: flex;
+    /* Usa Flexbox para la disposición de los elementos hijos */
+    flex-direction: column;
+    /* Organiza los elementos hijos en una columna */
+}
+
+.black-section {
+    position: relative;
+    /* Posiciona el elemento relativo para los elementos hijos absolutos */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo negro con 70% de opacidad para mejorar la visibilidad del contenido */
+    height: 100%;
+    /* Establece la altura del elemento al 100% del contenedor padre */
+    clip-path: polygon(0% 0%, 94% 0%, 23% 100%, 0% 100%);
+    /* Crea una forma con una máscara de recorte en forma de triángulo */
+    z-index: 2;
+    /* Asegura que esta sección esté encima de la imagen de fondo */
+    padding: 20px;
+    /* Añade un espacio interno alrededor del contenido */
+}
+
+.buttons-container {
+    position: absolute;
+    /* Posiciona el contenedor de botones de manera absoluta dentro del contenedor padre */
+    top: 50%;
+    /* Centra verticalmente el contenedor de botones */
+    left: 20%;
+    /* Posiciona el contenedor de botones a 20% desde el lado izquierdo */
+    transform: translateY(-50%);
+    /* Ajusta el contenedor de botones para que esté perfectamente centrado verticalmente */
+    display: flex;
+    /* Usa Flexbox para la disposición de los botones */
+    flex-direction: column;
+    /* Organiza los botones en una columna */
+    gap: 20px;
+    /* Añade un espacio entre los botones */
+    z-index: 3;
+    /* Asegura que los botones estén encima de la sección negra */
+}
+
+/* Define las animaciones */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Aplica la animación a los botones */
+.btnMainPage1Design {
+    border-radius: 50px;
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    animation: slideInFromLeft 0.6s ease-out;
+    /* Animación de entrada desde el lado izquierdo */
+}
+
+.btnMainPage2Design {
+    border-radius: 50px;
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    animation: slideInFromRight 0.6s ease-out;
+    /* Animación de entrada desde el lado derecho */
+}
+
+.btnMainPage1Design:hover,
+.btnMainPage2Design:hover {
+    height: 55px;
+    width: 210px;
+    background-color: #FFFFFF;
+    color: #A91D3A;
+    border: 2px solid #A91D3A;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    position: absolute;
+    /* Posiciona el footer de manera absoluta dentro del contenedor padre */
+    bottom: 0;
+    /* Posiciona el footer en la parte inferior del contenedor */
+    width: 100%;
+    /* Establece el ancho del footer al 100% del contenedor padre */
+    padding: 10px 0;
+    /* Añade un espacio interno en la parte superior e inferior del footer */
+    background-color: #000000;
+    /* Establece el color de fondo del footer a negro */
+    z-index: 4;
+    /* Asegura que el footer esté encima de la sección negra */
+}
+
+.socialNetworkDiv {
+    display: flex;
+    /* Usa Flexbox para la disposición de los iconos */
+    justify-content: center;
+    /* Centra los iconos horizontalmente */
+    gap: 20px;
+    /* Añade un espacio entre los iconos */
+    z-index: 4;
+    /* Asegura que los iconos estén encima de la sección negra */
+}
+
+.iconOne,
+.iconTwo,
+.iconThree {
+    display: flex;
+    /* Usa Flexbox para alinear los iconos */
+    align-items: center;
+    /* Alinea verticalmente los iconos si hay espacio adicional */
+}
+
+.iconOne :hover {
+    height: 30px;
+    width: 30px;
+}
+
+.iconTwo :hover {
+    height: 30px;
+    width: 30px;
+}
+
+.iconThree :hover {
+    height: 30px;
+    width: 30px;
+}
+
+/* Responsividad para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .black-section {
+        clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
+    }
+
+    .buttons-container {
+        left: 35%;
+        /* Ajusta la posición del contenedor de botones a 10% desde el lado izquierdo en pantallas más pequeñas */
+        transform: translateY(-50%);
+        /* Centra los botones horizontal y verticalmente */
+    }
+
+    .btnMainPage1Design,
+    .btnMainPage2Design {
+        width: 150px;
+        /* Reduce el ancho de los botones en pantallas más pequeñas */
+        height: 40px;
+        /* Reduce la altura de los botones en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .black-section {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        /* Ajusta la forma del fondo en pantallas aún más pequeñas */
+    }
+
+    .btnMainPage1Design,
+    .btnMainPage2Design {
+        width: 120px;
+        /* Reduce aún más el ancho de los botones en pantallas más pequeñas */
+        height: 40px;
+        /* Mantiene la altura reducida de los botones en pantallas más pequeñas */
+        font-size: 12px;
+        /* Reduce el tamaño de la fuente en los botones */
+    }
+
+    .footer {
+        padding: 5px 0;
+        /* Reduce el espacio interno del footer en pantallas más pequeñas */
+    }
+
+    .socialNetworkDiv {
+        flex-direction: column;
+        /* Organiza los iconos en una columna en pantallas más pequeñas */
+        align-items: center;
+        /* Centra los iconos horizontalmente en pantallas más pequeñas */
+        gap: 10px;
+        /* Reduce el espacio entre los iconos en pantallas más pequeñas */
+    }
+
+    .iconOne,
+    .iconTwo,
+    .iconThree {
+        padding-top: 10px;
+        /* Añade un espacio en la parte superior de los iconos en pantallas más pequeñas */
+    }
+}
+
+/*************************************************************************************************************************************/
+
+/* Estilos del FormEmergente */
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo oscuro semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px;
+    /* Añadido padding para que el modal no toque los bordes */
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #000;
+}
+
+.form-container h2 {
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.form-container h3 {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.submit-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos Responsivos */
+
+/* Para pantallas de menos de 768px */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 90%;
+        /* Se reduce el ancho para dispositivos pequeños */
+        padding: 15px;
+        /* Ajustamos el padding */
+    }
+
+    .form-container h2 {
+        font-size: 20px;
+        /* Tamaño de texto reducido */
+    }
+
+    .form-container h3 {
+        font-size: 16px;
+        /* Tamaño de texto reducido */
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        /* Botón ligeramente más pequeño */
+    }
+}
+
+/* Para pantallas de menos de 480px (móviles pequeños) */
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 100%;
+        /* El modal toma casi todo el ancho */
+        padding: 10px;
+        /* Padding ajustado */
+        border-radius: 5px;
+        /* Radio de borde más pequeño */
+    }
+
+    .form-container h2 {
+        font-size: 18px;
+    }
+
+    .form-container h3 {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        padding: 8px;
+        /* Disminuye el padding de los inputs */
+    }
+
+    .submit-btn {
+        font-size: 12px;
+        /* Botón más pequeño */
+        padding: 8px 15px;
+    }
+}
+
+/******************************************************************************************************************************************/
+
+/*************************Admin Main Page*********************************************/
+
+.admin-main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.content-overlay {
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 100px;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    margin-bottom: 80px; /* Espacio entre las tablas */
+}
+
+
+/*************************Controles (Botón Agregar y Barra de Búsqueda)********************/
+
+/* Estilo del contenedor de controles */
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Botón Agregar */
+.add-button {
+    background-color: #000000;
+    border-color: #b12222;
+    color: #b12222;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 170px;
+}
+
+.add-button:hover {
+    background-color: #b12222;
+    border-color: #b12222;
+    color: #FFFFFF;
+}
+
+.custom-btn {
+    background-color: #000000; /* Color de fondo del botón */
+    border-color: #be4949; /* Color del borde del botón */
+    color: #be4949; /* Color del texto del botón */
+}
+
+.custom-btn:hover {
+    background-color: #a03232; /* Color de fondo al pasar el cursor */
+    border-color: #a03232; /* Color del borde al pasar el cursor */
+    color: #fff; /* Color del texto del botón */
+}
+
+
+/*************************TablaRegistro**************************************/
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+thead th,
+tbody th {
+  color: #fff;
+  min-width: 120px; /* Ajusta el ancho mínimo de las columnas según sea necesario */
+}
+
+tbody td {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.card {
+    border-radius: .5rem;
+}
+
+.table-wrapper {
+    max-height: 400px; /* Ajusta este valor según sea necesario */
+    overflow-y: auto;
+    overflow-x: hidden; /* Desactiva el scroll horizontal en el contenedor */
+}
+
+.table {
+    width: 100%; /* Asegura que la tabla ocupe el ancho completo del contenedor */
+    min-width: 1400px; /* Aumenta el ancho mínimo según sea necesario */
+    border-collapse: collapse; /* Elimina el espacio entre bordes de las celdas */
+}
+
+.table thead {
+    display: table; /* Mantiene el encabezado alineado con el cuerpo de la tabla */
+    width: 100%; /* Asegura que el encabezado ocupe el ancho completo */
+    background-color: #343a40; /* Asegúrate de que el fondo del thead sea el mismo que el de la tabla */
+}
+
+.table tbody {
+    display: block; /* Permite scroll vertical */
+    max-height: 300px; /* Ajusta según la altura deseada */
+    overflow-y: auto;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Asegura que el encabezado esté sobre el contenido */
+    background-color: #a53232; /* Asegura que el fondo del encabezado sea visible */
+}
+
+.table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* Fija el layout de la tabla para que las columnas se alineen correctamente */
+}
+
+.table thead th, .table tbody td {
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/*************************Botones de acciones**************************************/
+/* Contenedor de los botones de acciones */
+.action-buttons {
+    display: flex;
+    gap: 5px; /* Espacio entre botones */
+}
+
+/* Botón Edit */
+.edit-button {
+    background-color: #ffeb69;
+    color: #000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-button:hover {
+    background-color: #e6b800;
+}
+
+/* Botón Delete */
+.del-button {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.del-button:hover {
+    background-color: #cc0000;
+}
+
+
+/***********FormPopUp******************************************/
+
+
+.Adminmodal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo oscuro semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 15px;
+    /* Añadido padding para que el modal no toque los bordes */
+}
+
+.Adminmodal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.form-group input {
+    width: 100%;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+}
+
+/*************************Navbar*********************************************/
+
+.title{
+    font-family: 'Kenyan Coffee', sans-serif;
+    font-size: 65px;                                           
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
+.btn-filtrar{
+    background-color: #000000; /* Color de fondo del botón */
+    border-color: #be4949; /* Color del borde del botón */
+    color: #be4949; /* Color del texto del botón */
+}
+
+.btn-filtrar:hover{
+    background-color: #a03232; /* Color de fondo al pasar el cursor */
+    border-color: #a03232; /* Color del borde al pasar el cursor */
+    color: #fff; /* Color del texto del botón */
+}
+
+
+/**********************Login*******************************************************/
+
+
+body{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #c4c3ca;
+	background-color: #1f2029;
+	overflow-x: hidden;
+}
+
+a, .link {
+	cursor: pointer;
+	transition: all 200ms linear;
+	color: #c4c3ca;
+}
+
+a:hover, .link:hover {
+	color: #ffeba7;
+	text-decoration: none;
+}
+
+p {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+h4 {
+	font-weight: 600;
+}
+
+h6 span{
+	padding: 0 20px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.section{
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+.full-height{
+	min-height: 100vh;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+	position: absolute;
+	left: -9999px;
+}
+
+.checkbox:checked + label,
+.checkbox:not(:checked) + label{
+	position: relative;
+	display: block;
+	text-align: center;
+	width: 60px;
+	height: 16px;
+	border-radius: 8px;
+	padding: 0;
+	margin: 10px auto;
+	cursor: pointer;
+	background-color: #ffffff;
+}
+
+.checkbox:checked + label:before,
+.checkbox:not(:checked) + label:before{
+	position: absolute;
+	display: block;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	color: #ffffff;
+	background-color: #b12222;
+	font-family: 'unicons';
+	content: '\eb4f';
+	z-index: 20;
+	top: -10px;
+	left: -10px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 24px;
+	transition: all 0.5s ease;
+}
+
+.checkbox:checked + label:before {
+	transform: translateX(44px) rotate(-270deg);
+}
+
+.card-3d-wrap {
+	position: relative;
+	width: 440px;
+	max-width: 100%;
+	height: 400px;
+	transform-style: preserve-3d;
+	perspective: 800px;
+	margin-top: 60px;
+}
+
+.card-3d-wrapper {
+	width: 100%;
+	height: 100%;
+	position: absolute;    
+	top: 0;
+	left: 0;  
+	transform-style: preserve-3d;
+	transition: all 600ms ease-out; 
+}
+
+.card-front, .card-back {
+	width: 100%;
+	height: 100%;
+	background-color: #2a2b38;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: 300%;
+	position: absolute;
+	border-radius: 6px;
+	left: 0;
+	top: 0;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
+
+.card-back {
+	transform: rotateY(180deg);
+}
+
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+	transform: rotateY(180deg);
+}
+
+.center-wrap{
+	position: absolute;
+	width: 100%;
+	padding: 0 35px;
+	top: 50%;
+	left: 0;
+	transform: translate3d(0, -50%, 35px) perspective(100px);
+	z-index: 20;
+	display: block;
+}
+
+.form-group{ 
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.form-style {
+	padding: 13px 20px;
+	padding-left: 55px;
+	height: 48px;
+	width: 100%;
+	font-weight: 500;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: 0.5px;
+	outline: none;
+	color: #c4c3ca;
+	background-color: #1f2029;
+	border: none;
+	transition: all 200ms linear;
+	box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+}
+
+.form-style:focus,
+.form-style:active {
+	border: none;
+	outline: none;
+	box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+}
+
+.input-icon {
+	position: absolute;
+	top: 0;
+	left: 18px;
+	height: 48px;
+	font-size: 24px;
+	line-height: 48px;
+	text-align: left;
+	color: #b12222;
+	transition: all 200ms linear;
+}
+
+.form-group input:-ms-input-placeholder  {
+	color: #c4c3ca;
+	opacity: 0.7;
+	transition: all 200ms linear;
+}
+
+.form-group input::-moz-placeholder  {
+	color: #c4c3ca;
+	opacity: 0.7;
+	transition: all 200ms linear;
+}
+
+.form-group input:-moz-placeholder  {
+	color: #c4c3ca;
+	opacity: 0.7;
+	transition: all 200ms linear;
+}
+
+.form-group input::-webkit-input-placeholder  {
+	color: #c4c3ca;
+	opacity: 0.7;
+	transition: all 200ms linear;
+}
+
+.form-group input:focus:-ms-input-placeholder,
+.form-group input:focus::-moz-placeholder,
+.form-group input:focus:-moz-placeholder,
+.form-group input:focus::-webkit-input-placeholder  {
+	opacity: 0;
+	transition: all 200ms linear;
+}
+
+.btn{  
+	border-radius: 4px;
+	height: 44px;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: all 200ms linear;
+	padding: 0 30px;
+	letter-spacing: 1px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border: none;
+	background-color: #b12222;
+	color: #ffffff;
+	box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+}
+
+.btn:active,
+.btn:focus{  
+	background-color: #ffffff;
+	color: #b12222;
+	box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+
+.btn:hover{  
+	background-color: #ffffff;
+	color: #b12222;
+	box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+
+.logo {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	display: block;
+	z-index: 100;
+	transition: all 250ms linear;
+}
+
+.logo img {
+	height: 36px;
+	width: auto;
+	display: block;
+}
